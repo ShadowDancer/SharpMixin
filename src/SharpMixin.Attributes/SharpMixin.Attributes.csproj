@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <LangVersion>8</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.0-preview1</Version>
+    <PackageId>SharpMixin.Attributes</PackageId>
+    <Authors>Przemysław Onak</Authors>
+    <PackageProjectUrl>https://github.com/ShadowDancer/SharpMixin</PackageProjectUrl>
+    <Description>Contains attributed required for designating classes as mixins, it will be compiled along with your product.
+You will need SharpMixin.Generator package to generate actual code.</Description>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath=""/>
+    <None Include="..\..\README.md" Pack="true" PackagePath=""/>
+  </ItemGroup>  
+</Project>

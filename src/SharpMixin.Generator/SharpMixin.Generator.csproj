@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>                 
+    <IsRoslynComponent>true</IsRoslynComponent>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.0-preview1</Version>
+    <PackageId>SharpMixin.Generator</PackageId>
+    <Authors>Przemysław Onak</Authors>
+    <PackageProjectUrl>https://github.com/ShadowDancer/SharpMixin</PackageProjectUrl>
+    <Description>Contains Source Generator which automatically generates implementation for mixin classes.
+This is developement only dependedency, which is not compiled into your program.
+
+SharpMixin.Attributes package is required for designating classes as mixins.</Description>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <DevelopmentDependency>true</DevelopmentDependency>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.9.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\SharpMixin.Attributes\ConstructUsingAttribute.cs">
+      <Link>Attributes\ConstructUsingAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpMixin.Attributes\MixinAttribute.cs">
+      <Link>Attributes\MixinAttribute.cs</Link>
+    </Compile>    
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="" />
+    <None Include="..\..\README.md" Pack="true" PackagePath=""/>
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>  
+
+
+</Project>
